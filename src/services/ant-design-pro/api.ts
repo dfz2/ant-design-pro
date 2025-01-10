@@ -22,7 +22,7 @@ export async function outLogin(options?: { [key: string]: any }) {
 
 /** 登录接口 POST /api/login/account */
 export async function login(body: API.LoginParams, options?: { [key: string]: any }) {
-  return request<API.LoginResult>('/api/login/account', {
+  return request<API.LoginResult>('/api/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -88,6 +88,41 @@ export async function removeRule(options?: { [key: string]: any }) {
     method: 'POST',
     data: {
       method: 'delete',
+      ...(options || {}),
+    },
+  });
+}
+
+
+
+
+/** 获取规则列表 GET /api/rule */
+export async function tasks(
+  params: {
+    // query
+    /** 当前的页码 */
+    current?: number;
+    /** 页面的容量 */
+    pageSize?: number;
+  },
+  options?: { [key: string]: any },
+) {
+  return request<API.RuleList>('/api/tasks', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}
+
+
+/** 新建规则 POST /api/rule */
+export async function addTask(options?: { [key: string]: any }) {
+  return request<API.RuleListItem>('/api/task', {
+    method: 'POST',
+    data: {
+      method: 'post',
       ...(options || {}),
     },
   });

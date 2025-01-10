@@ -3,7 +3,7 @@
 
 declare namespace API {
   type CurrentUser = {
-    name?: string;
+    username?: string;
     avatar?: string;
     userid?: string;
     email?: string;
@@ -49,8 +49,32 @@ declare namespace API {
     progress?: number;
   };
 
+
+
   type RuleList = {
     data?: RuleListItem[];
+    /** 列表的内容总数 */
+    total?: number;
+    success?: boolean;
+  };
+
+  type TaskListItem = {
+    name?: string;
+    taskId?: string;
+    nameCn?: string;
+    state?: string;
+    args?: string;
+    kwargs?: string;
+    result?: string;
+    received?: string;
+    started?: string;
+    runtime?: string;
+    worker?: string;
+    createdAt?: string;
+  }
+
+  type TaskList = {
+    data?: TaskListItem[];
     /** 列表的内容总数 */
     total?: number;
     success?: boolean;

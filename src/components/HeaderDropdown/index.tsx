@@ -10,6 +10,15 @@ const useStyles = createStyles(({ token }) => {
       [`@media screen and (max-width: ${token.screenXS}px)`]: {
         width: '100%',
       },
+      [`.ant-dropdown-menu`]: {
+        [`.ant-dropdown-menu-item`]: {
+          height: '42px'
+        }
+
+      },
+
+
+
     },
   };
 });

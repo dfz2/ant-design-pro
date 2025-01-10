@@ -29,6 +29,12 @@ export default [
     component: './Welcome',
   },
   {
+    name: 'list.training',
+    icon: 'RobotOutlined',
+    path: '/training',
+    component: './Training',
+  },
+  {
     path: '/admin',
     name: 'admin',
     icon: 'crown',
